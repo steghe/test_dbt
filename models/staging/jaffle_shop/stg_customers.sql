@@ -1,8 +1,4 @@
-{{ config (
-    materialized="table"
-)}}
-
-with customers as (
+with final as (
 
     select
         id as customer_id,
@@ -13,4 +9,4 @@ with customers as (
 
 )
 
-select * from customers
+select * from final

@@ -1,8 +1,4 @@
-{{ config (
-    materialized="table"
-)}}
-
-with orders as (
+with final as (
 
     select
         id as order_id,
@@ -14,4 +10,4 @@ with orders as (
 
 )
 
-select * from orders
+select * from final

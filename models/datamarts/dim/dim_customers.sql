@@ -1,8 +1,3 @@
-{{ config (
-    materialized="table"
-)}}
-
-
 with dim_customers as (
 
     select
@@ -11,11 +6,12 @@ with dim_customers as (
         stg_customers.last_name,
         stg_customer_orders.first_order_date,
         stg_customer_orders.most_recent_order_date,
-        coalesce(stg_customer_orders.number_of_orders, 0) as number_of_orders
-
+        customerlifetimevalue,
+        number_of_orders
     from {{ ref("stg_customers") }}
-
     left join {{ ref("stg_customer_orders") }} using (customer_id)
+    left join {{ ref("customerlifetimevalue") }} using (customer_id)
+    left join {{ ref("numberofcustomerorders") }} using (customer_id)
 
 )
 
