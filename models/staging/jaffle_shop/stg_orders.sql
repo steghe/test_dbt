@@ -6,7 +6,7 @@ with final as (
         order_date,
         status
 
-    from test_dbt.jaffle_shop.orders
+    from {{ source('jaffle_shop', 'orders') }}
 
 )
 

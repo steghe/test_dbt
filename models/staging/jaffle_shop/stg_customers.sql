@@ -5,7 +5,7 @@ with final as (
         first_name,
         last_name
 
-    from test_dbt.jaffle_shop.customers
+    from {{ source('jaffle_shop', 'customers') }} 
 
 )
 

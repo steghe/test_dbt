@@ -6,7 +6,7 @@ with final as (
     STATUS,
     AMOUNT,
     CREATED
-    from test_dbt.stripe.payment
+    from {{ source('stripe', 'payment') }} 
 )
 
 select * from final
