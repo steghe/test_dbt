@@ -10,7 +10,7 @@ models:
 
 sources:
   - name: stripe
-    database: test_dbt
+    database: dev_on_dbt
     tables:
       - name: payment
         loaded_at_field: CREATED

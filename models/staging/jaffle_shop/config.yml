@@ -30,7 +30,7 @@ models:
 
 sources:
   - name: jaffle_shop
-    database: test_dbt
+    database: dev_on_dbt
     tables:
       - name: orders
         loaded_at_field: _ETL_LOADED_AT
