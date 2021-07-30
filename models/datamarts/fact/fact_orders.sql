@@ -1,4 +1,3 @@
-%snapshot
 with fact_orders as (
 
     select
@@ -13,4 +12,3 @@ with fact_orders as (
 )
 
 select * from fact_orders
-%endsnapshot
